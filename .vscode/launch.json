@@ -9,6 +9,15 @@
             "args": [],
             "cwd": "${workspaceRoot}",
             "protocol": "inspector"
+        },
+        {
+            "name": "launchTest",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/dist/test.js",
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector"
         }
     ]
 }

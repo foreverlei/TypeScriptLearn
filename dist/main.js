@@ -49,4 +49,5 @@ var sam = new Snake("Sammy the Python");
 var tom = new Horse("Tommy the Palomino");
 sam.move();
 tom.move(34);
+// import test from "./test";
 //# sourceMappingURL=main.js.map

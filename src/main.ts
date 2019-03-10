@@ -27,3 +27,7 @@ let tom: Animal = new Horse("Tommy the Palomino");
 
 sam.move();
 tom.move(34);
+
+
+// import test from "./test";
+
