@@ -43,27 +43,81 @@
 // tom1.move(34);
 
 
-class Animal1 {
-    private name: string;
-    constructor(theName: string) { this.name = theName; }
+// class Animal1 {
+//     private name: string;
+//     constructor(theName: string) { this.name = theName; }
+// }
+
+// class Rhino extends Animal1 {
+//     age:number = 10;
+//     constructor() { super("Rhino"); }
+// }
+
+// class Employee {
+//     private name: string;
+//     constructor(theName: string) { this.name = theName; }
+// }
+
+// let animal = new Animal1("Goat");
+// let rhino = new Rhino();
+// let employee = new Employee("Bob");
+
+
+// rhino = animal as Rhino;
+// console.log(rhino.age);
+// // animal = rhino;
+// // animal = employee; // 错误: Animal 与 Employee 不兼容.
+
+//-------------------------
+// class Octopus {
+//     readonly name: string;
+//     readonly numberOfLegs: number = 8;
+//     constructor (theName: string) {
+//         this.name = theName;
+//         this.numberOfLegs = 10;
+//     }
+// }
+// let dad = new Octopus("Man with the 8 strong legs");
+// // dad.name = "Man with the 3-piece suit"; // 错误! name 是只读的.
+
+// class Test11{
+//     constructor(readonly name:string){
+
+//     }
+// }
+
+// let tt = new Test11("T111");
+// console.log(tt.name)
+
+//--------------
+
+class Greeter {
+    static standardGreeting = "Hello, there";
+    greeting: string;
+    greet() {
+        if (this.greeting) {
+            return "Hello, " + this.greeting;
+        }
+        else {
+            return Greeter.standardGreeting;
+        }
+    }
 }
 
-class Rhino extends Animal1 {
-    age:number = 10;
-    constructor() { super("Rhino"); }
-}
+console.log(Greeter)
+console.log(typeof Greeter)
 
-class Employee {
-    private name: string;
-    constructor(theName: string) { this.name = theName; }
-}
+let greeter1: Greeter;
+greeter1 = new Greeter();
+console.log(greeter1.greet());
 
-let animal = new Animal1("Goat");
-let rhino = new Rhino();
-let employee = new Employee("Bob");
+let greeterMaker: typeof Greeter = Greeter;
 
+console.log(greeterMaker === Greeter);
 
-rhino = animal as Rhino;
-console.log(rhino.age);
-// animal = rhino;
-// animal = employee; // 错误: Animal 与 Employee 不兼容.
+greeterMaker.standardGreeting = "Hey there!";
+
+let greeter2: Greeter = new greeterMaker();
+console.log(greeter2.greet());
+let greeter3 = new Greeter();
+console.log(greeter3.greet());
