@@ -14,7 +14,7 @@
             "name": "launchTest",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/dist/test.js",
+            "program": "${workspaceRoot}/dist/test1.js",
             "args": [],
             "cwd": "${workspaceRoot}",
             "protocol": "inspector"
